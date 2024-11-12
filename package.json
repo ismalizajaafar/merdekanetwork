@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@nuxt/devtools-ui-kit": "^1.6.0",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "chart.js": "^4.4.6",
+    "nuxt": "^3.13.2",
+    "uikit": "^3.21.13",
+    "vue": "latest",
+    "vue-chart.js": "^0.2.0",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@fedorae/nuxt-uikit": "^3.1.11",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vuetify": "^3.7.3"
+  }
+}
