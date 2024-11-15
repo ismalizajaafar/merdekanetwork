@@ -1,40 +1,41 @@
 <template>
-  <div class="container">
-    <!-- Service Overview -->
-    <div class="section overview" uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
-      <h1>Cloud Services</h1>
-      <p>
-        Our cloud services empower businesses with scalable, secure, and cost-effective solutions. From cloud migration
-        to management, Merdeka Network provides end-to-end services tailored to fit your business needs.
-      </p>
-    </div>
+  <div class="background">
+    <div class="container">
+      <!-- Service Overview -->
+      <div class="section overview fade-in">
+        <h1 class="uk-heading-medium">Cloud Services</h1>
+        <p>
+          Our cloud services empower businesses with scalable, secure, and cost-effective solutions. From cloud migration to management, Merdeka Network provides end-to-end services tailored to fit your business needs.
+        </p>
+      </div>
 
-    <!-- Cloud Solutions -->
-    <div class="section solutions" uk-scrollspy="cls: uk-animation-slide-left; delay: 200; repeat: true">
-      <h2>Our Cloud Solutions</h2>
-      <div class="solution-list">
-        <div class="solution-item" v-for="(solution, index) in cloudSolutions" :key="index">
-          <h3>{{ solution.title }}</h3>
-          <p>{{ solution.description }}</p>
+      <!-- Cloud Solutions -->
+      <div class="section solutions fade-in-up">
+        <h2>Our Cloud Solutions</h2>
+        <div class="solution-list">
+          <div class="solution-item" v-for="(solution, index) in cloudSolutions" :key="index" :style="{ animationDelay: `${index * 0.2}s` }">
+            <h3>{{ solution.title }}</h3>
+            <p>{{ solution.description }}</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Benefits of Cloud Services -->
-    <div class="section benefits" uk-scrollspy="cls: uk-animation-slide-right; delay: 400; repeat: true">
-      <h2>Why Choose Our Cloud Services?</h2>
-      <ul class="benefit-list">
-        <li v-for="(benefit, index) in benefits" :key="index">{{ benefit }}</li>
-      </ul>
-    </div>
+      <!-- Benefits of Cloud Services -->
+      <div class="section benefits fade-in-up">
+        <h2>Why Choose Our Cloud Services?</h2>
+        <ul class="benefit-list">
+          <li v-for="(benefit, index) in benefits" :key="index">{{ benefit }}</li>
+        </ul>
+      </div>
 
-    <!-- Customer Success Stories -->
-    <div class="section testimonials" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 600; repeat: true">
-      <h2>Customer Success Stories</h2>
-      <div class="testimonial-list">
-        <div class="testimonial-item" v-for="(testimonial, index) in testimonials" :key="index">
-          <p>"{{ testimonial.quote }}"</p>
-          <strong>- {{ testimonial.author }}</strong>
+      <!-- Customer Success Stories -->
+      <div class="section testimonials fade-in">
+        <h2>Customer Success Stories</h2>
+        <div class="testimonial-list">
+          <div class="testimonial-item" v-for="(testimonial, index) in testimonials" :key="index" :style="{ animationDelay: `${index * 0.2}s` }">
+            <p>"{{ testimonial.quote }}"</p>
+            <strong>- {{ testimonial.author }}</strong>
+          </div>
         </div>
       </div>
     </div>
@@ -68,19 +69,47 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  background-image: url("@/assets/backg1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-out;
+}
+
+.uk-heading-medium{
+  padding-top: 30px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #1976D2; /* Heading color */
 }
 
 .section {
   margin-bottom: 40px;
-  padding-top: 100px;
+  padding-top: 40px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.benefits{
+  background-color: rgba(255, 255, 255, 0.92);
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+.testimonials{
+  background-color: rgba(255, 255, 255, 0.92);
+  padding-bottom: 20px;
+  border-radius: 10px;
 }
 
 .overview {
+  padding-top: 100px;
   text-align: center;
-  max-width: 800px;
-  margin: auto;
 }
 
 .solutions, .benefits, .testimonials {
@@ -101,14 +130,17 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
   text-align: center;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .benefit-list {
   list-style-type: none;
   padding: 0;
-  text-align: left;
   max-width: 600px;
   margin: auto;
+  text-align: left;
 }
 
 .benefit-list li {
@@ -126,5 +158,26 @@ export default {
   max-width: 600px;
   font-style: italic;
   color: #555;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="page-background">
     <!-- Hero Section -->
     <section class="uk-section uk-section-muted hero-section">
-      <div class="uk-container uk-text-center uk-margin-large">
-        <div class="hero-overlay" uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
-          <h1 class="uk-heading-large hero-title">Our Services</h1>
-          <p class="uk-text-lead hero-subtitle" uk-scrollspy="cls: uk-animation-fade; delay: 200; repeat: true">
+      <div class="uk-container uk-text-center">
+        <div class="hero-overlay">
+          <h1 class="hero-title">Our Services</h1>
+          <p class="hero-subtitle">
             Explore our range of services designed to meet your needs with top-notch solutions.
           </p>
         </div>
@@ -15,14 +15,10 @@
     <!-- Services Section -->
     <v-container class="services-section" fluid>
       <v-row class="text-center">
-        <v-col cols="12" md="4" v-for="(service, index) in services" :key="index">
-          <v-card
-            class="service-card"
-            elevation="10"
-            uk-scrollspy="cls: uk-animation-slide-right; delay: 300; repeat: true"
-          >
+        <v-col cols="12" sm="6" md="4" lg="3" v-for="(service, index) in services" :key="index">
+          <v-card class="service-card" elevation="10">
             <v-img :src="service.image" alt="Service Image" height="250px"></v-img>
-            <v-card-title class="headline">{{ service.title }}</v-card-title>
+            <v-card-title>{{ service.title }}</v-card-title>
             <v-card-text>{{ service.description }}</v-card-text>
           </v-card>
         </v-col>
@@ -32,24 +28,46 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-// Importing images directly
-import pcMaintenanceImage from '@/assets/pcmaintain.jpg'
-import serverSetupImage from '@/assets/data.png'
-import networkingImage from '@/assets/network.jpg'
-import cloudImage from '@/assets/cloud.jpg'
+import pcMaintenanceImage from "@/assets/pcmaintain.jpg";
+import serverSetupImage from "@/assets/data.png";
+import networkingImage from "@/assets/network.jpg";
+import cloudImage from "@/assets/cloud.jpg";
 
-// Defining the services array with imported images
 const services = ref([
-  { title: "PC Maintenance", image: pcMaintenanceImage, description: "Regular maintenance and support for all PC systems." },
-  { title: "Server Setup", image: serverSetupImage, description: "Professional server setup for businesses of all sizes." },
-  { title: "Networking Solutions", image: networkingImage, description: "Comprehensive networking solutions for seamless connectivity." },
-  { title: "Cloud Storage", image: cloudImage, description: "Secure, scalable cloud storage with top-notch encryption and reliability." },
-])
+  {
+    title: "PC Maintenance",
+    image: pcMaintenanceImage,
+    description: "Regular maintenance and support for all PC systems.",
+  },
+  {
+    title: "Server Setup",
+    image: serverSetupImage,
+    description: "Professional server setup for businesses of all sizes.",
+  },
+  {
+    title: "Networking Solutions",
+    image: networkingImage,
+    description: "Comprehensive networking solutions for seamless connectivity.",
+  },
+  {
+    title: "Cloud Storage",
+    image: cloudImage,
+    description: "Secure, scalable cloud storage with top-notch encryption and reliability.",
+  },
+]);
 </script>
 
 <style scoped>
+/* Page Background */
+.page-background {
+  background-image: url("@/assets/backg1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* Hero Section */
 .hero-section {
   background-image: url("@/assets/service.jpg");
@@ -64,14 +82,14 @@ const services = ref([
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background-color: rgba(24, 9, 112, 0.5);
   padding: 30px;
   text-align: center;
 }
 
 .hero-title {
   font-size: 3rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, Times, serif;
   margin: 0;
   text-transform: uppercase;
   color: #fff;
@@ -87,7 +105,7 @@ const services = ref([
 /* Services Section */
 .services-section {
   padding: 40px 20px;
-  background-color: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .service-card {
@@ -100,23 +118,14 @@ const services = ref([
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
 }
 
-.service-card v-card-title {
+.service-card .v-card-title {
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: center;
 }
 
-.service-card v-card-text {
+.service-card .v-card-text {
   color: #555;
-}
-
-/* Add padding and more spacing */
-.uk-section-muted {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.uk-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  text-align: center;
 }
 </style>

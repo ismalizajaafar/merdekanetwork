@@ -1,33 +1,45 @@
 <template>
-  <div class="container">
-    <!-- Service Overview -->
-    <div class="section overview" uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
-      <h1>Our Network Services</h1>
-      <p>
-        At Merdeka Network, we specialize in providing robust and reliable network solutions tailored to meet the
-        demands of modern businesses. Our services include network design, setup, monitoring, and support for
-        enterprises of all sizes.
-      </p>
-    </div>
-
-    <!-- Core Features -->
-    <div class="section features" uk-scrollspy="cls: uk-animation-slide-left; delay: 200; repeat: true">
-      <h2>Core Features</h2>
-      <div class="feature-list">
-        <div class="feature-item" v-for="(feature, index) in features" :key="index">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
+  <div class="page-background">
+    <div class="background">
+      <!-- Service Overview -->
+      <div class="uk-section uk-section-muted overview" uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
+        <div class="uk-container uk-text-center">
+          <h1 class="uk-heading-medium">Our Network Services</h1>
+          <p class="uk-text-lead">
+            At Merdeka Network, we specialize in providing robust and reliable network solutions tailored to meet the
+            demands of modern businesses. Our services include network design, setup, monitoring, and support for
+            enterprises of all sizes.
+          </p>
         </div>
       </div>
-    </div>
 
-    <!-- Customer Testimonials -->
-    <div class="section testimonials" uk-scrollspy="cls: uk-animation-slide-right; delay: 400; repeat: true">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial-list">
-        <div class="testimonial-item" v-for="(testimonial, index) in testimonials" :key="index">
-          <p>"{{ testimonial.quote }}"</p>
-          <strong>- {{ testimonial.author }}</strong>
+      <!-- Core Features -->
+      <div class="uk-section uk-section-default features" uk-scrollspy="cls: uk-animation-slide-left; delay: 200; repeat: true">
+        <div class="uk-container">
+          <h2 class="uk-heading-medium">Core Features</h2>
+          <div class="uk-grid-small uk-child-width-1-2@m uk-flex-center" uk-grid>
+            <div v-for="(feature, index) in features" :key="index" class="feature-item">
+              <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Testimonials -->
+      <div class="uk-section uk-section-muted testimonials" uk-scrollspy="cls: uk-animation-slide-right; delay: 400; repeat: true">
+        <div class="uk-container uk-text-center">
+          <h2 class="uk-heading-medium">What Our Clients Say</h2>
+          <div class="uk-grid-small uk-child-width-1-2@m uk-flex-center" uk-grid>
+            <div v-for="(testimonial, index) in testimonials" :key="index" class="testimonial-item">
+              <div class="uk-card uk-card-default uk-card-body">
+                <p>"{{ testimonial.quote }}"</p>
+                <strong>- {{ testimonial.author }}</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -54,55 +66,51 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding: 20px;
+/* Page Background */
+.page-background {
+  background-image: url("@/assets/backg1.jpeg"); /* Same background image as about.vue */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.section {
-  margin-bottom: 40px;
-  padding-top: 100px;
+/* Section Styling */
+.uk-section-muted {
+  padding: 60px 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent background for readability */
 }
 
-.overview {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
+.uk-heading-medium {
+  padding-top: 20px;
+  font-weight: bold;
+  color: #1976D2; /* Heading color matching about.vue */
 }
 
-.features {
-  text-align: center;
-}
-
-.feature-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.feature-item {
-  background-color: #f9f9f9;
-  padding: 20px;
+/* Feature Card Styling */
+.feature-item .uk-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonials {
-  text-align: center;
+.feature-item .uk-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-.testimonial-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.testimonial-item {
-  max-width: 600px;
+/* Testimonial Styling */
+.testimonial-item .uk-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
   font-style: italic;
   color: #555;
+}
+
+.testimonial-item .uk-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #000;
 }
 </style>

@@ -1,5 +1,6 @@
 <!-- pages/contact.vue -->
 <template>
+  <div class="overlay">
   <div class="uk-section uk-section-muted">
     <div class="uk-container uk-text-center">
       <div class="uk-margin-large">
@@ -38,6 +39,8 @@
       </form>
     </div>
   </div>
+  </div>
+  
 </template>
 
 <script setup>
@@ -45,6 +48,19 @@
 </script>
 
 <style scoped>
+.overlay{
+  
+  background-image: url("@/assets/backg1.jpeg");
+  background-size: cover;
+}
+
+.uk-heading-medium {
+  padding-top: 100px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #1976D2; /* Heading color */
+}
+
 .uk-heading-medium {
   padding-top: 100px;
   color: #1976D2; /* Heading color */

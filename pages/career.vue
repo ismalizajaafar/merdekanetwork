@@ -1,4 +1,5 @@
 <template>
+  <div class="overlay">
   <div class="uk-section uk-section-muted">
     <div class="uk-container uk-text-center">
       <div class="uk-margin-large">
@@ -8,31 +9,127 @@
         </p>
       </div>
 
-      <ul class="uk-list uk-list-divider uk-scrollspy" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat: true">
-        <li>Network Engineer - Full-time</li>
-        <li>PC Maintenance Technician - Full-time</li>
-        <li>Cloud Solutions Architect - Full-time</li>
-        <li>IT Support Specialist - Part-time</li>
-        <li>Data Analyst - Part-time</li>
-      </ul>
+      <div class="career-list uk-scrollspy" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat: true">
+        <div 
+          v-for="(position, index) in careers" 
+          :key="index" 
+          class="career-item uk-card uk-card-hover uk-card-body uk-margin-medium-bottom"
+        >
+          <h3>{{ position.title }}</h3>
+          <p class="uk-text-meta"><em>{{ position.type }}</em></p>
+          
+          <div class="job-details">
+            <p>{{ position.details }}</p>
+          </div>
+        </div>
+      </div>
 
       <p class="uk-margin uk-text-lead">
         Interested candidates can apply by contacting us or sending their CV to <strong>careers@merdekanetwork.com</strong>.
       </p>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
-// No additional setup needed
+import { ref } from "vue";
+
+const careers = ref([
+  {
+    title: "Network Engineer",
+    type: "Full-time",
+    details:
+      "Design, implement, and maintain network infrastructure, including routers, switches, and firewalls. Monitor and troubleshoot network performance and ensure high availability.",
+  },
+  {
+    title: "PC Maintenance Technician",
+    type: "Full-time",
+    details:
+      "Perform routine checks, diagnostics, and repairs on computer hardware. Install and update software, ensure system security, and provide technical support to users.",
+  },
+  {
+    title: "Cloud Solutions Architect",
+    type: "Full-time",
+    details:
+      "Develop and deploy cloud architectures for scalable solutions. Collaborate with stakeholders to design secure, cost-effective systems and manage migrations to the cloud.",
+  },
+  {
+    title: "IT Support Specialist",
+    type: "Part-time",
+    details:
+      "Assist with day-to-day IT operations, troubleshoot technical issues, and configure software/hardware systems. Provide on-site and remote support as required.",
+  },
+  {
+    title: "Data Analyst",
+    type: "Part-time",
+    details:
+      "Interpret data using statistical tools, identify trends, and create dashboards/reports. Collaborate with teams to provide insights for strategic decisions.",
+  },
+]);
 </script>
 
 <style scoped>
-.uk-heading-medium {
-  color: #1976D2; /* Heading color */
-  padding-top: 100px;
+.uk-section{
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.uk-list > li {
-  font-size: 1.2rem; /* Consistent font size for list items */
+
+.overlay{
+  background-image: url("@/assets/backg1.jpeg");
+  background-size: cover;
+}
+
+.uk-heading-medium {
+  padding-top: 100px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #1976D2; /* Heading color */
+}
+
+.career-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.career-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.career-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.career-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.career-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.career-item .uk-text-meta {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.job-details {
+  display: none;
+  font-size: 1rem;
+  color: #444;
+  padding-top: 10px;
+}
+
+.career-item:hover .job-details {
+  display: block;
 }
 </style>

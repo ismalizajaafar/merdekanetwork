@@ -64,7 +64,7 @@ html, body {
 .uk-heading-large {
   color: #1a1a2e; /* Copper color for the heading */
   font-weight: 950;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   /* font-stretch: wider; */
   margin-bottom: 1rem;
   
@@ -72,7 +72,7 @@ html, body {
   -webkit-text-stroke: 1px #fff; /* Black outline */
   
   /* Shadow effect for a bubble look */
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9),
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.9),
                0px 0px 15px rgba(255, 215, 255, 0.6);
 
   /* Additional styling to make it more bubble-like */
@@ -86,7 +86,7 @@ html, body {
   font-weight: bold;
   margin-bottom: 1.5rem; /* Space below the paragraph */
 
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 0px #000;
   text-shadow: 4px 4px 10px rgb(255, 255, 255),
                0px 0px 15px rgb(255, 255, 255);
 }
