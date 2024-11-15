@@ -2,9 +2,18 @@
   <nav :class="['navbar', { 'scrolled': isScrolled }]">
     <div class="navbar-container">
       <!-- Logo and Name (Optional) -->
+      <img src="@/assets/merdekanetwork.png" class="nav-logo">
       <span class="navbar-name">Merdeka Network</span>
 
-      <ul class="navbar-menu">
+      <!-- Hamburger Icon for small screens -->
+      <div class="hamburger" @click="toggleMenu" v-if="isMobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Menu for large screens or when hamburger is open -->
+      <ul class="navbar-menu" :class="{ 'active': isMenuOpen }">
         <li class="navbar-item" v-for="menu in menus" :key="menu.name">
           <NuxtLink 
             :to="menu.link" 
@@ -34,19 +43,22 @@
 </template>
 
 <script setup>
-// Scroll handling and menu data
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const isScrolled = ref(false);
+const isMenuOpen = ref(false);
+const isMobile = ref(false);
+
 const menus = ref([
   { name: 'Home', link: '/' },
   { name: 'About', link: '/about' },
   { name: 'Services', link: '/Services',
-   submenu: [{ name: 'Data Analyst', link: '/services/data'},
-             { name: 'Networking Service', link: '/services/network'},
-             { name: 'PC Maintenance', link: '/services/pcmaintenance'},
-             { name: 'Cloud Storage', link: '/services/cloud'},
-            ]  },
+    submenu: [{ name: 'Data Analyst', link: '/services/data'},
+              { name: 'Networking Service', link: '/services/network'},
+              { name: 'PC Maintenance', link: '/services/pcmaintenance'},
+              { name: 'Cloud Storage', link: '/services/cloud'},
+            ] 
+  },
   { name: 'Career', link: '/career'},
   { name: 'Contact', link: '/contact'},
 ]);
@@ -56,12 +68,23 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 0;
 };
 
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth <= 768; // Adjust based on your preferred breakpoint
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', checkMobile);
+  checkMobile(); // Check on page load
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', checkMobile);
 });
 </script>
 
@@ -72,32 +95,38 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0); /* Transparent */
+  background-color: #e5e5e5;
   transition: background-color 0.3s ease;
   z-index: 1000;
 }
 
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.9); /* Light background on scroll */
+  background-color: #e5e5e5;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 15px;
+  justify-content: space-between; /* Adjusted for space between items */
+  /* padding: 15px; */
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
+.nav-logo {
+  max-width: 80px;
+}
 .navbar-name {
   font-size: 24px;
-  color: #4B9B9B; /* Soft teal */
+  color: #1a1a2e;
   font-weight: bold;
 }
 
 .navbar-menu {
   display: flex;
   list-style: none;
-  margin-left: 20px;
+  justify-content: flex-start;
+  margin: 0;
 }
 
 .navbar-item {
@@ -106,7 +135,7 @@ onUnmounted(() => {
 }
 
 .navbar-link {
-  color: #4B9B9B; /* Soft teal */
+  color: #1a1a2e;
   font-size: 18px;
   text-decoration: none;
   padding: 5px;
@@ -114,11 +143,11 @@ onUnmounted(() => {
 }
 
 .navbar-link:hover {
-  color: #A0D6D6; /* Lighter teal on hover */
+  color: #ff5722;
 }
 
 .navbar-item .active {
-  color: #A0D6D6; /* Lighter teal for active links */
+  color: #ff5722;
   font-weight: bold;
 }
 
@@ -127,13 +156,12 @@ onUnmounted(() => {
   display: block;
 }
 
-/* Remove bullets from the dropdown menu */
 .dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
+  background-color: #e5e5e5;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-width: 150px;
   padding: 0;
@@ -146,7 +174,7 @@ onUnmounted(() => {
 }
 
 .dropdown li a {
-  color: #4B9B9B; /* Soft teal */
+  color: #1a1a2e;
   text-decoration: none;
 }
 
@@ -166,6 +194,46 @@ onUnmounted(() => {
 }
 
 .navbar-item a:hover::after {
-  background-color: #A0D6D6; /* Light teal underline on hover */
+  background-color: #ffa500;
+}
+
+/* Hamburger menu (for small screens) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #1a1a2e;
+  margin: 4px 0;
+}
+
+/* For small screens (max width 768px) */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e5e5e5;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 </style>

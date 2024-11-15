@@ -5,7 +5,7 @@
   <div class="uk-container uk-text-center uk-margin-large">
     <!-- Keep the "About Us" heading and text with the same effect -->
     <h2 class="uk-heading-medium">About Us</h2>
-    <p>Learn more about our mission, vision, and values at Merdeka Network.</p>
+    <p class="about-us">Learn more about our mission, vision, and values at Merdeka Network.</p>
 
     <!-- Mission Card -->
     <div class="uk-card uk-card-default uk-card-body uk-margin-medium" uk-scrollspy="cls: uk-animation-fade; delay: 300">
@@ -33,12 +33,17 @@
 </script>
 
 <style scoped>
+.uk-section{
+  background-image: url("@/assets/backg.png");
+}
 .uk-heading-medium {
   padding-top: 100px;
+  font-weight: bold;
   color: #1976D2; /* Heading color */
 }
 .uk-accordion-title {
-  font-size: 1.2rem; /* Consistent font size */
+  font-size: 1.2rem;
+  font-weight: bold; /* Consistent font size */
   color: #333; /* Dark gray for title color */
   transition: color 0.3s;
 }
