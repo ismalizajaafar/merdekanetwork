@@ -34,7 +34,7 @@
 
 <style scoped>
 .uk-section{
-  background-image: url("@/assets/backg.png");
+  background-image: url("@/assets/backg2.png");
 }
 .uk-heading-medium {
   padding-top: 100px;
