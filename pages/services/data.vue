@@ -61,8 +61,8 @@ export default {
         'Improve efficiency and reduce costs',
       ],
       testimonials: [
-        { quote: 'Merdeka Network’s data analysis transformed how we make decisions.', author: 'John D., Business Analyst' },
-        { quote: 'Their predictive analytics helped us stay ahead of market trends.', author: 'Linda S., Marketing Manager' },
+        { quote: 'Merdeka Network’s data analysis transformed how we make decisions.', author: '' },
+        { quote: 'Their predictive analytics helped us stay ahead of market trends.', author: '' },
       ],
     };
   },

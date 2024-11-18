@@ -60,8 +60,8 @@ export default {
         'Seamless access from anywhere, anytime',
       ],
       testimonials: [
-        { quote: 'Merdeka Network made our cloud migration effortless and secure. Highly recommended!', author: 'Alice Tan, CTO' },
-        { quote: 'Their disaster recovery solutions saved us from a major data loss. Outstanding service!', author: 'Mark Liu, Operations Manager' },
+        { quote: 'Merdeka Network made our cloud migration effortless and secure. Highly recommended!'},
+        { quote: 'Their disaster recovery solutions saved us from a major data loss. Outstanding service!'},
       ],
     };
   },
@@ -117,6 +117,7 @@ export default {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  align-items: center;
 }
 .overview {
   padding-top: 100px;

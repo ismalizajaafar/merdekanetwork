@@ -61,8 +61,8 @@ export default {
         'Proactive identification and resolution of issues',
       ],
       testimonials: [
-        { quote: 'Merdeka Network’s maintenance services have kept our office PCs running efficiently and securely.', author: 'Carlos M., Office Manager' },
-        { quote: 'Their virus removal and performance optimization significantly improved our workflow.', author: 'Sarah L., Freelance Designer' },
+        { quote: 'Merdeka Network’s maintenance services have kept our office PCs running efficiently and securely.', author: '' },
+        { quote: 'Their virus removal and performance optimization significantly improved our workflow.', author: '' },
       ],
     };
   },

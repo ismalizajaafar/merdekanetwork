@@ -57,8 +57,8 @@ export default {
         { title: 'Bandwidth Optimization', description: 'Efficient bandwidth allocation to maintain smooth and fast data flows.' },
       ],
       testimonials: [
-        { quote: 'Merdeka Network provided excellent support, and our network has never been more stable.', author: 'John Doe, IT Manager' },
-        { quote: 'Their proactive monitoring helped us avoid costly downtimes. Highly recommended!', author: 'Jane Smith, Operations Director' },
+        { quote: 'Merdeka Network provided excellent support, and our network has never been more stable.', author: '' },
+        { quote: 'Their proactive monitoring helped us avoid costly downtimes. Highly recommended!', author: '' },
       ],
     };
   },
