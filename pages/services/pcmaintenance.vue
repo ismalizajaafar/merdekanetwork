@@ -4,14 +4,14 @@
       <!-- Service Overview -->
       <div class="section overview">
         <h1 class="fade-in uk-heading-medium">PC Maintenance Services</h1>
-        <p class="fade-in">
+        <p class="fade-in desc">
           Merdeka Network offers comprehensive PC maintenance services to ensure your systems run efficiently and securely. Our expert team provides regular upkeep, troubleshooting, and repair services tailored to meet your business or personal needs.
         </p>
       </div>
 
       <!-- Types of PC Maintenance Services -->
       <div class="section services">
-        <h2 class="fade-in">Our PC Maintenance Services</h2>
+        <h2 class="fade-in pcmservice">Our PC Maintenance Services</h2>
         <div class="service-list">
           <div class="service-item fade-in" v-for="(service, index) in pcServices" :key="index" :style="{ animationDelay: `${index * 0.2}s` }">
             <h3>{{ service.title }}</h3>
@@ -30,7 +30,7 @@
 
       <!-- Client Testimonials -->
       <div class="section testimonials">
-        <h2 class="fade-in">What Our Clients Say</h2>
+        <h2 class="fade-in pcmservice">What Our Clients Say</h2>
         <div class="testimonial-list">
           <div class="testimonial-item fade-in" v-for="(testimonial, index) in testimonials" :key="index" :style="{ animationDelay: `${index * 0.2}s` }">
             <p>"{{ testimonial.quote }}"</p>
@@ -71,21 +71,29 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url("@/assets/backg1.jpeg");
+  background-image: url("@/assets/backg3.jpeg");
   background-size: cover;
   background-position: center;
 }
 
+.desc{
+  color: #f9f9f9;
+}
+
+.pcmservice{
+  color: #f9f9f9;
+}
+
 .container {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
   animation: fadeIn 1s ease-out;
 }
 .uk-heading-medium{
   padding-top: 30px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #1976D2; /* Heading color */
+  color: #f9f9f9; /* Heading color */
 }
 
 .section {
@@ -100,10 +108,14 @@ export default {
   border-radius: 10px;
 }
 
-.testimonials{
-  background-color: rgba(255, 255, 255, 0.92);
-  padding-bottom: 20px;
-  border-radius: 10px;
+.testimonial-item {
+  max-width: 600px;
+  font-style: italic;
+  color: #555;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 .overview {

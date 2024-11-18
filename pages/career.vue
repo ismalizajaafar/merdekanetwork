@@ -68,22 +68,27 @@ const careers = ref([
   },
 ]);
 </script>
-
 <style scoped>
-.uk-section{
-  background-color: rgba(255, 255, 255, 0.3);
+.uk-section {
+  background-color: rgba(255, 255, 255, 0.01);
 }
 
-.overlay{
-  background-image: url("@/assets/backg1.jpeg");
+.overlay {
+  background-image: url("@/assets/backg3.jpeg");
   background-size: cover;
+  background-attachment: fixed; /* Ensures the background remains fixed */
 }
 
 .uk-heading-medium {
   padding-top: 100px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #1976D2; /* Heading color */
+  color: #f9f9f9; /* Heading color */
+}
+
+.uk-text-lead{
+  color: #f9f9f9;
+  
 }
 
 .career-list {
@@ -95,15 +100,10 @@ const careers = ref([
 .career-item {
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #fff;
-  cursor: pointer;
   overflow: hidden;
-}
-
-.career-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Static shadow */
 }
 
 .career-item h3 {
@@ -123,13 +123,9 @@ const careers = ref([
 }
 
 .job-details {
-  display: none;
   font-size: 1rem;
   color: #444;
   padding-top: 10px;
 }
-
-.career-item:hover .job-details {
-  display: block;
-}
 </style>
+

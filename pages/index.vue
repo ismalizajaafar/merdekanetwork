@@ -30,7 +30,7 @@ html, body {
 
 /* Parallax Section */
 .home-background {
-  background-image: url('@/assets/backg1.jpeg');
+  background-image: url('@/assets/backg3.jpeg');
   background-attachment: fixed; /* Enable parallax effect */
   background-size: cover;
   background-position: center;
@@ -49,7 +49,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(245, 238, 238, 0.2); /* Dark overlay for text visibility */
+  background-color: rgb(245, 238, 238,0); /* Dark overlay for text visibility */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +62,7 @@ html, body {
 }
 
 .uk-heading-large {
-  color: #1a1a2e; /* Copper color for the heading */
+  color: #F9FCF8; /* Copper color for the heading */
   font-weight: 950;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   /* font-stretch: wider; */
@@ -82,20 +82,21 @@ html, body {
 
 
 .uk-text-lead {
-  color: #333; /* Text color for paragraph */
+  color: #F9FCF8; /* Text color for paragraph */
   font-weight: bold;
   margin-bottom: 1.5rem; /* Space below the paragraph */
 
-  -webkit-text-stroke: 0px #000;
-  text-shadow: 4px 4px 10px rgb(255, 255, 255),
-               0px 0px 15px rgb(255, 255, 255);
+  -webkit-text-stroke: 0px #fff;
+  /* text-shadow: 4px 4px 7px rgb(255, 255, 255),
+               0px 0px 7px rgb(255, 255, 255); */
 }
 
 /* Button Styles */
 .uk-button-primary {
-  background-color: #ff5722; /* Primary button color */
-  border-color: #ff5722; /* Border color */
-  color: #fff; /* White text for contrast */
+  background-color: #743843; /* Primary button color */
+  border-color: #743843; /* Border color */
+  color: #F9FCF8; /* White text for contrast */
+  font-weight: bold;
   
   /* Shadow for depth */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2), /* Basic shadow */
@@ -108,12 +109,12 @@ html, body {
 /* Additional hover effect to enhance glow */
 .uk-button-primary:hover {
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3), /* Slightly deeper shadow */
-              0px 0px 15px rgba(255, 87, 34, 0.8); /* Stronger glow */
+              0px 0px 15px rgba(168, 73, 105, 0.8); /* Stronger glow */
 }
 
 
 .uk-button-primary:hover {
-  background-color: #A95D30; /* Darker shade on hover */
+  background-color: #d8aab3; /* Darker shade on hover */
 }
 
 .uk-button-secondary {

@@ -95,13 +95,13 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #e5e5e5;
+  background-color: #091539;
   transition: background-color 0.3s ease;
   z-index: 1000;
 }
 
 .navbar.scrolled {
-  background-color: #e5e5e5;
+  background-color: #091539;
 }
 
 .navbar-container {
@@ -118,7 +118,7 @@ onUnmounted(() => {
 }
 .navbar-name {
   font-size: 24px;
-  color: #1a1a2e;
+  color: #DEE5ED;
   font-weight: bold;
 }
 
@@ -135,7 +135,7 @@ onUnmounted(() => {
 }
 
 .navbar-link {
-  color: #1a1a2e;
+  color: #DEE5ED;
   font-size: 18px;
   text-decoration: none;
   padding: 5px;
@@ -143,11 +143,11 @@ onUnmounted(() => {
 }
 
 .navbar-link:hover {
-  color: #ff5722;
+  color: #DEE5ED;
 }
 
 .navbar-item .active {
-  color: #ff5722;
+  color: #DEE5ED;
   font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ onUnmounted(() => {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #e5e5e5;
+  background-color: #091539;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-width: 150px;
   padding: 0;
@@ -174,7 +174,7 @@ onUnmounted(() => {
 }
 
 .dropdown li a {
-  color: #1a1a2e;
+  color: #DEE5ED;
   text-decoration: none;
 }
 
@@ -194,7 +194,7 @@ onUnmounted(() => {
 }
 
 .navbar-item a:hover::after {
-  background-color: #ffa500;
+  background-color: #DEE5ED;
 }
 
 /* Hamburger menu (for small screens) */
@@ -207,7 +207,7 @@ onUnmounted(() => {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: #1a1a2e;
+  background-color: #DEE5ED;
   margin: 4px 0;
 }
 
@@ -220,7 +220,7 @@ onUnmounted(() => {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #e5e5e5;
+    background-color: #091539;
   }
 
   .navbar-menu.active {

@@ -1,131 +1,110 @@
 <template>
-  <div class="page-background">
-    <!-- Hero Section -->
-    <section class="uk-section uk-section-muted hero-section">
-      <div class="uk-container uk-text-center">
-        <div class="hero-overlay">
-          <h1 class="hero-title">Our Services</h1>
-          <p class="hero-subtitle">
-            Explore our range of services designed to meet your needs with top-notch solutions.
-          </p>
+  <div class="background">
+    <!-- Main Section -->
+    <section class="uk-section uk-overlay">
+      <div class="uk-container uk-text-center uk-margin-large">
+        <!-- "About Us" Heading and Text -->
+        <h2 class="uk-heading-medium">Services</h2>
+        <p class="about-us">
+          Learn more about our mission, vision, and values at Merdeka Network.
+        </p>
+
+        <!-- Mission, Vision, and Values Cards -->
+        <div class="uk-grid-match uk-child-width-1-3@m uk-grid-medium" uk-grid>
+          <!-- Mission -->
+          <div>
+            <div class="uk-card uk-card-hover uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 300">
+              <span class="uk-icon-button uk-margin-small-bottom" uk-icon="heart"></span>
+              <h3 class="uk-card-title">Data Analyst</h3>
+              <p>
+                To become a leading force in Malaysia’s engineering and telecommunications sectors, recognized for its commitment to quality, innovation, and customer satisfaction. We aim to contribute to sustainable community development and set new standards of excellence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Vision -->
+          <div>
+            <div class="uk-card uk-card-hover uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 400">
+              <span class="uk-icon-button uk-margin-small-bottom" uk-icon="future"></span>
+              <h3 class="uk-card-title">Pc Maintenance</h3>
+              <p>
+                To deliver innovative engineering solutions, reliable telecommunication services, and high-quality goods that exceed client expectations. We aim to foster long-term partnerships through exceptional value and service.
+              </p>
+            </div>
+          </div>
+
+          <!-- Values -->
+          <div>
+            <div class="uk-card uk-card-hover uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+              <span class="uk-icon-button uk-margin-small-bottom" uk-icon="star"></span>
+              <h3 class="uk-card-title">Cloud Storage</h3>
+              <p>Integrity, innovation, and commitment to quality in all our endeavors.</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="uk-card uk-card-hover uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+              <span class="uk-icon-button uk-margin-small-bottom" uk-icon="star"></span>
+              <h3 class="uk-card-title">Networking Service</h3>
+              <p>Integrity, innovation, and commitment to quality in all our endeavors.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
-
-    <!-- Services Section -->
-    <v-container class="services-section" fluid>
-      <v-row class="text-center">
-        <v-col cols="12" sm="6" md="4" lg="3" v-for="(service, index) in services" :key="index">
-          <v-card class="service-card" elevation="10">
-            <v-img :src="service.image" alt="Service Image" height="250px"></v-img>
-            <v-card-title>{{ service.title }}</v-card-title>
-            <v-card-text>{{ service.description }}</v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-import pcMaintenanceImage from "@/assets/pcmaintain.jpg";
-import serverSetupImage from "@/assets/data.png";
-import networkingImage from "@/assets/network.jpg";
-import cloudImage from "@/assets/cloud.jpg";
-
-const services = ref([
-  {
-    title: "PC Maintenance",
-    image: pcMaintenanceImage,
-    description: "Regular maintenance and support for all PC systems.",
-  },
-  {
-    title: "Server Setup",
-    image: serverSetupImage,
-    description: "Professional server setup for businesses of all sizes.",
-  },
-  {
-    title: "Networking Solutions",
-    image: networkingImage,
-    description: "Comprehensive networking solutions for seamless connectivity.",
-  },
-  {
-    title: "Cloud Storage",
-    image: cloudImage,
-    description: "Secure, scalable cloud storage with top-notch encryption and reliability.",
-  },
-]);
+// No additional setup needed for this UIKit-based design
 </script>
 
 <style scoped>
-/* Page Background */
-.page-background {
-  background-image: url("@/assets/backg1.jpeg");
+.background {
+  background-image: url("@/assets/backg3.jpeg");
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-/* Hero Section */
-.hero-section {
-  background-image: url("@/assets/service.jpg");
-  background-size: cover;
   background-position: center;
-  position: relative;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  min-height: 100vh;
 }
 
-.hero-overlay {
-  background-color: rgba(24, 9, 112, 0.5);
-  padding: 30px;
-  text-align: center;
-}
+/* .uk-section.uk-overlay {
+  background-color: rgba(255, 255, 255, 0.2); /* Light transparent overlay */
+  /* background-size: cover; */
+  
 
-.hero-title {
-  font-size: 3rem;
-  font-family: Georgia, Times, serif;
-  margin: 0;
-  text-transform: uppercase;
-  color: #fff;
-}
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 300;
-  margin-top: 15px;
-  color: #fff;
-}
-
-/* Services Section */
-.services-section {
-  padding: 40px 20px;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-card .v-card-title {
-  font-size: 1.2rem;
+.about-us {
+  color: #f9fcf8;
   font-weight: bold;
-  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 100px;
+
 }
 
-.service-card .v-card-text {
-  color: #555;
-  text-align: center;
+.uk-heading-medium {
+  padding-top: 100px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #f9fcf8;
+  -webkit-text-stroke: 1px #333;
+}
+
+.uk-card-hover {
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uk-icon-button {
+  background-color: #333;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.uk-icon-button:hover {
+  transform: scale(1.2);
+  background-color: #b76e3b;
 }
 </style>

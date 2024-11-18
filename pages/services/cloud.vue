@@ -4,14 +4,14 @@
       <!-- Service Overview -->
       <div class="section overview fade-in">
         <h1 class="uk-heading-medium">Cloud Services</h1>
-        <p>
+        <p class="desc">
           Our cloud services empower businesses with scalable, secure, and cost-effective solutions. From cloud migration to management, Merdeka Network provides end-to-end services tailored to fit your business needs.
         </p>
       </div>
 
       <!-- Cloud Solutions -->
       <div class="section solutions fade-in-up">
-        <h2>Our Cloud Solutions</h2>
+        <h2 class="cloudso">Our Cloud Solutions</h2>
         <div class="solution-list">
           <div class="solution-item" v-for="(solution, index) in cloudSolutions" :key="index" :style="{ animationDelay: `${index * 0.2}s` }">
             <h3>{{ solution.title }}</h3>
@@ -30,7 +30,7 @@
 
       <!-- Customer Success Stories -->
       <div class="section testimonials fade-in">
-        <h2>Customer Success Stories</h2>
+        <h2 class="cloudso">Customer Success Stories</h2>
         <div class="testimonial-list">
           <div class="testimonial-item" v-for="(testimonial, index) in testimonials" :key="index" :style="{ animationDelay: `${index * 0.2}s` }">
             <p>"{{ testimonial.quote }}"</p>
@@ -70,14 +70,22 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url("@/assets/backg1.jpeg");
+  background-image: url("@/assets/backg3.jpeg");
   background-size: cover;
   background-position: center;
 }
 
+.desc{
+  color: #f9f9f9;
+}
+
+.cloudso{
+  color: #f9f9f9;
+}
+
 .container {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
   animation: fadeIn 1s ease-out;
 }
 
@@ -85,7 +93,7 @@ export default {
   padding-top: 30px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #1976D2; /* Heading color */
+  color: #f9f9f9; /* Heading color */
 }
 
 .section {
@@ -101,12 +109,15 @@ export default {
   border-radius: 10px;
 }
 
-.testimonials{
-  background-color: rgba(255, 255, 255, 0.92);
-  padding-bottom: 20px;
-  border-radius: 10px;
+.testimonial-item {
+  max-width: 600px;
+  font-style: italic;
+  color: #555;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
-
 .overview {
   padding-top: 100px;
   text-align: center;
