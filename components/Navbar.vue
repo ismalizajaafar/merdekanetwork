@@ -120,6 +120,8 @@ onUnmounted(() => {
   font-size: 24px;
   color: #DEE5ED;
   font-weight: bold;
+  position: fixed;
+  margin-left: 90px;
 }
 
 .navbar-menu {
