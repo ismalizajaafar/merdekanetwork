@@ -98,7 +98,7 @@ export default {
           title: "Visit Us",
           description: "Find our office for in-person assistance.",
           buttonText: "Get Directions",
-          link: "https://maps.google.com",
+          link: "https://goto.now/goocG",
         },
       ],
     };
