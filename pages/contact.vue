@@ -3,32 +3,22 @@
     <!-- Hero Section -->
     <v-row class="hero-section" justify="center" align="center">
       <v-col cols="12" md="8" class="text-center">
-        <h1 class="display-1 font-weight-bold">Get in Touch</h1>
-        <p class="text-h6 mt-4">
-          Have questions or need assistance? Our team is here to help.
+        <h1 class="display-1 title font-weight-bold">Get in Touch</h1>
+        <p class="text-h6 mt-4 title">
+          We’re here to help you with any questions or inquiries.
         </p>
       </v-col>
     </v-row>
 
-    <!-- Contact Options -->
-    <v-row class="contact-options mt-10" justify="center" align="center">
-      <v-col cols="12" md="4" v-for="(option, index) in contactOptions" :key="index">
-        <v-card class="text-center" elevation="2">
-          <v-icon color="primary" large class="mt-4">{{ option.icon }}</v-icon>
-          <v-card-title class="headline font-weight-bold">{{ option.title }}</v-card-title>
-          <v-card-text>{{ option.description }}</v-card-text>
-          <v-btn :href="option.link" color="primary" class="mt-3">
-            {{ option.buttonText }}
-          </v-btn>
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <!-- Contact Form Section -->
-    <v-row class="contact-form-section mt-10" justify="center">
-      <v-col cols="12" md="8">
+    <!-- Contact Section -->
+    <v-row class="contact-options mt-10" justify="center" align="flex-start">
+      <!-- Feedback Form on the Left -->
+      <v-col cols="12" md="6">
         <v-card elevation="2" class="pa-6">
-          <h2 class="text-h4 font-weight-bold mb-4">Send Us a Message</h2>
+          <h2 class="text-h4 font-weight-bold mb-4">Contact Us</h2>
+          <p class="text-body-1 mb-6">
+            Fill out the form below, and we’ll get back to you as soon as possible.
+          </p>
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-row dense>
               <v-col cols="12" md="6">
@@ -66,6 +56,38 @@
           </v-form>
         </v-card>
       </v-col>
+
+      <!-- Contact Options (Email Us & Visit Us) on the Right -->
+      <v-col cols="12" md="6">
+  <v-row dense class="contact-cards">
+    <!-- Email Us Card -->
+    <v-col cols="12">
+      <v-card class="text-center contact-card card-spacing" elevation="3">
+        <v-icon color="primary" size="48" class="mt-4">mdi-email</v-icon>
+        <v-card-title class="headline font-weight-bold mt-2">Email Us</v-card-title>
+        <v-card-text>Reach out to us via email for any inquiries.</v-card-text>
+        <v-card-text>info@merdekanetwork.com</v-card-text>
+      </v-card>
+    </v-col>
+
+    <!-- Space Between Cards -->
+    <v-col cols="12" class="mt-4"></v-col>
+
+    <!-- Visit Us Card -->
+    <v-col cols="12">
+      <v-card class="text-center contact-card card-spacing" elevation="3">
+        <v-icon color="primary" size="48" class="mt-4">mdi-map-marker</v-icon>
+        <v-card-title class="headline font-weight-bold mt-2">Visit Us</v-card-title>
+        <v-card-text>Find our office and meet us in person.</v-card-text>
+        <v-card-text>
+          123 Merdeka Street, City Name, Country
+          <br />
+          <a href="https://www.google.com/maps?q=123+Merdeka+Street,+City+Name,+Country" target="_blank" class="text-primary">View in Map</a>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-col>
     </v-row>
   </v-container>
 </template>
@@ -82,23 +104,21 @@ export default {
       },
       rules: {
         required: (value) => !!value || "This field is required.",
-        email: (value) =>
-          /.+@.+\..+/.test(value) || "E-mail must be valid.",
+        email: (value) => /.+@.+\..+/.test(value) || "E-mail must be valid.",
       },
       contactOptions: [
         {
           icon: "mdi-email",
           title: "Email Us",
-          description: "Get in touch via email for detailed inquiries.",
-          buttonText: "Send an Email",
-          link: "mailto:info@merdekanetwork.com",
+          description: "Reach out to us via email for any inquiries.",
+          email: "info@merdekanetwork.com", // Display the email directly
         },
         {
           icon: "mdi-map-marker",
           title: "Visit Us",
-          description: "Find our office for in-person assistance.",
-          buttonText: "Get Directions",
-          link: "https://g.co/kgs/cbmNKU8",
+          description: "Find our office and meet us in person.",
+          address: "123 Merdeka Street, City Name, Country", // Your office address here
+          mapLink: "https://www.google.com/maps?q=123+Merdeka+Street,+City+Name,+Country", // Google Maps link
         },
       ],
     };
@@ -114,7 +134,7 @@ export default {
         this.$refs.form.reset();
       }
     },
-  }, 
+  },
 };
 </script>
 
@@ -122,34 +142,63 @@ export default {
 .contact-page {
   background-image: url("@/assets/backg3.jpeg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh; /* Ensures the container fills the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content fills vertically with no gaps */
+  padding: 40px 0;
+  margin: 0; /* Removes extra margin */
 }
 
-.display-1{
+.title{
   color: #f9f9f9;
 }
 
-.hero-section {
-  /* min-height: 20vh; */
-  background: url("/images/contact-hero.jpg") no-repeat center center;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  margin-top: 100px;
+.card-spacing {
+  margin-bottom: 20px; /* Adjust spacing as needed */
 }
 
-.contact-options .v-card {
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 100px;
+}
+.contact-options{
+  padding-left: 250px;
+  
+}
+.contact-card{
+  margin-bottom: 50px;
+}
+.contact-options .contact-card {
   padding: 20px;
-  min-height: 300px;
-  max-width: 450px;
+  min-height: 250px;
+  max-width: 400px;
   margin: auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-options .contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .contact-form-section {
   background-color: white;
-  padding: 40px 20px;
+  padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  margin: auto;
+  max-width: 800px;
+  padding-right: 100px ;
+}
+
+.v-btn {
+  text-transform: none;
+}
+
+a.text-primary {
+  text-decoration: none;
 }
 </style>
