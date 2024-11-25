@@ -80,8 +80,11 @@
         <v-card-title class="headline font-weight-bold mt-2">Visit Us</v-card-title>
         <v-card-text>Find our office and meet us in person.</v-card-text>
         <v-card-text>
-          123 Merdeka Street, City Name, Country
+          Lot A-1-11 Pusat Komersial Jalan Kuching Jalan Kepayang,
+           Off, Jln Kuching, 51200 Kuala Lumpur,
+            Federal Territory of Kuala Lumpur, Malaysia
           <br />
+          <p>Phone: +60 3-62424474</p>
           <a href="https://www.google.com/maps?q=123+Merdeka+Street,+City+Name,+Country" target="_blank" class="text-primary">View in Map</a>
         </v-card-text>
       </v-card>
@@ -117,7 +120,7 @@ export default {
           icon: "mdi-map-marker",
           title: "Visit Us",
           description: "Find our office and meet us in person.",
-          address: "123 Merdeka Street, City Name, Country", // Your office address here
+          address: " Lot A-1-11 Pusat Komersial Jalan Kuching Jalan Kepayang Off Jln Kuching 51200 Kuala Lumpur Federal Territory of Kuala Lumpur", // Your office address here
           mapLink: "https://www.google.com/maps?q=123+Merdeka+Street,+City+Name,+Country", // Google Maps link
         },
       ],
