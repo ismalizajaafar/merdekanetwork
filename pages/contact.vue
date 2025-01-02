@@ -118,10 +118,10 @@ export default {
         },
         {
           icon: "mdi-map-marker",
-          title: "Visit Us",
-          description: "Find our office and meet us in person.",
-          address: " Lot A-1-11 Pusat Komersial Jalan Kuching Jalan Kepayang Off Jln Kuching 51200 Kuala Lumpur Federal Territory of Kuala Lumpur", // Your office address here
-          mapLink: "https://www.google.com/maps?q=123+Merdeka+Street,+City+Name,+Country", // Google Maps link
+title: "Visit Us",
+description: "Find our office and meet us in person.",
+address: '<a href="https://g.co/kgs/Nja73j4" target="_blank">Lot A-1-11 Pusat Komersial Jalan Kuching Jalan Kepayang Off Jln Kuching 51200 Kuala Lumpur Federal Territory of Kuala Lumpur</a>', // Your office address as a hyperlink
+
         },
       ],
     };
