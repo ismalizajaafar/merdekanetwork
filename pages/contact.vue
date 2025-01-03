@@ -114,7 +114,7 @@ export default {
           icon: "mdi-email",
           title: "Email Us",
           description: "Reach out to us via email for any inquiries.",
-          email: "info@merdekanetwork.com", // Display the email directly
+          email: "support@merdekanetwork.com", // Display the email directly
         },
         {
           icon: "mdi-map-marker",
