@@ -80,12 +80,11 @@
         <v-card-title class="headline font-weight-bold mt-2">Visit Us</v-card-title>
         <v-card-text>Find our office and meet us in person.</v-card-text>
         <v-card-text>
-          Lot A-1-11 Pusat Komersial Jalan Kuching Jalan Kepayang,
+          <a href="https://maps.app.goo.gl/ABiRKRisf7tB5ZDV8">Lot A-1-11 Pusat Komersial Jalan Kuching Jalan Kepayang,
            Off, Jln Kuching, 51200 Kuala Lumpur,
-            Federal Territory of Kuala Lumpur, Malaysia
+            Federal Territory of Kuala Lumpur, Malaysia</a>
           <br />
           <p>Phone: +60 3-62424474</p>
-          <a href="https://www.google.com/maps?q=123+Merdeka+Street,+City+Name,+Country" target="_blank" class="text-primary">View in Map</a>
         </v-card-text>
       </v-card>
     </v-col>
