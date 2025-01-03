@@ -66,7 +66,7 @@
         <v-icon color="primary" size="48" class="mt-4">mdi-email</v-icon>
         <v-card-title class="headline font-weight-bold mt-2">Email Us</v-card-title>
         <v-card-text>Reach out to us via email for any inquiries.</v-card-text>
-        <v-card-text>info@merdekanetwork.com</v-card-text>
+        <v-card-text>support@merdekanetwork.com</v-card-text>
       </v-card>
     </v-col>
 
